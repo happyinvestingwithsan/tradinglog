@@ -1,6 +1,6 @@
 "use server";
 
-import { exchangeKiteToken, fetchKiteTrades, fetchKitePositions, fetchKiteMargins, fetchKiteGttTriggers } from '@/lib/kite';
+import { exchangeKiteToken, fetchKiteTrades, fetchKitePositions, fetchKiteMargins, fetchKiteGttTriggers, createKiteGttTrigger } from '@/lib/kite';
 import { RawTrade } from '@/lib/tradeEngine';
 
 export async function authenticateKiteAction(
@@ -47,5 +47,33 @@ export async function fetchKiteDataAction(apiKey: string, accessToken: string) {
   } catch (error: any) {
     console.error("Zerodha fetch error:", error);
     return { success: false, error: error.message || 'Failed to fetch data from Kite Connect' };
+  }
+}
+
+export async function createKiteGttAction(
+  apiKey: string,
+  accessToken: string,
+  params: {
+    symbol: string;
+    quantity: number;
+    ltp: number;
+    triggerType: 'single' | 'two-leg';
+    transactionType: 'BUY' | 'SELL';
+    stopLoss?: {
+      trigger: number;
+      price: number;
+    };
+    target?: {
+      trigger: number;
+      price: number;
+    };
+  }
+) {
+  try {
+    const res = await createKiteGttTrigger(apiKey, accessToken, params);
+    return { success: true, data: res };
+  } catch (error: any) {
+    console.error("GTT placement action error:", error);
+    return { success: false, error: error.message || 'Failed to place GTT order' };
   }
 }

@@ -108,6 +108,33 @@ export default function DashboardPage() {
     setActiveTab("performance");
   };
 
+  // Trigger a full background sync from local storage session
+  const triggerAutoSync = async () => {
+    const savedSessionStr = localStorage.getItem("kite_session");
+    if (savedSessionStr) {
+      try {
+        const parsedSession = JSON.parse(savedSessionStr) as KiteSession;
+        const res = await fetchKiteDataAction(parsedSession.apiKey, parsedSession.accessToken);
+        if (res.success) {
+          setKitePositions(res.positions || []);
+          setKiteMargins(res.margins || null);
+          setKiteGttTriggers(res.gttTriggers || []);
+          
+          if (res.trades && res.trades.length > 0) {
+            setTrades((prevTrades) => {
+              const tradeMap = new Map<string, RawTrade>();
+              prevTrades.forEach((t) => { if (t.tradeId) tradeMap.set(t.tradeId, t); });
+              res.trades.forEach((t) => { if (t.tradeId) tradeMap.set(t.tradeId, t); });
+              return Array.from(tradeMap.values());
+            });
+          }
+        }
+      } catch (e) {
+        console.error("Auto sync refresh failed:", e);
+      }
+    }
+  };
+
   // We always use the detailed FIFO-matched open positions computed from the merged trades list
   const displayPositions = openPositions;
 
@@ -346,6 +373,7 @@ export default function DashboardPage() {
                 positions={displayPositions} 
                 gttTriggers={kiteGttTriggers} 
                 kitePositions={kitePositions}
+                onRefresh={triggerAutoSync}
               />
             </div>
 

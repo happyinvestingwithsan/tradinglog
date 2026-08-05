@@ -188,3 +188,115 @@ export async function fetchKiteGttTriggers(
 
   return json.data || [];
 }
+
+export async function createKiteGttTrigger(
+  apiKey: string,
+  accessToken: string,
+  params: {
+    symbol: string;
+    quantity: number;
+    ltp: number;
+    triggerType: 'single' | 'two-leg';
+    transactionType: 'BUY' | 'SELL';
+    stopLoss?: {
+      trigger: number;
+      price: number;
+    };
+    target?: {
+      trigger: number;
+      price: number;
+    };
+  }
+): Promise<any> {
+  let type: 'single' | 'two-leg';
+  let condition: any;
+  let orders: any[];
+
+  if (params.triggerType === 'single') {
+    const leg = params.stopLoss || params.target;
+    if (!leg) {
+      throw new Error("Trigger details must be specified for single leg GTT");
+    }
+
+    type = 'single';
+    condition = {
+      exchange: "NFO",
+      tradingsymbol: params.symbol,
+      trigger_values: [leg.trigger],
+      last_price: params.ltp,
+    };
+    orders = [
+      {
+        exchange: "NFO",
+        tradingsymbol: params.symbol,
+        transaction_type: params.transactionType,
+        quantity: params.quantity,
+        price: leg.price,
+        order_type: "LIMIT",
+        product: "NRML",
+      },
+    ];
+  } else {
+    // two-leg OCO GTT trigger
+    const sl = params.stopLoss;
+    const tgt = params.target;
+    if (!sl || !tgt) {
+      throw new Error("Both Stop-Loss and Target must be specified for OCO GTT");
+    }
+
+    // Sort trigger values: lower value first, higher value second (Zerodha requirement)
+    // We sort both trigger values and keep the corresponding execution prices aligned
+    const legs = [
+      { trigger: sl.trigger, price: sl.price },
+      { trigger: tgt.trigger, price: tgt.price }
+    ].sort((a, b) => a.trigger - b.trigger);
+
+    type = 'two-leg';
+    condition = {
+      exchange: "NFO",
+      tradingsymbol: params.symbol,
+      trigger_values: [legs[0].trigger, legs[1].trigger],
+      last_price: params.ltp,
+    };
+    orders = [
+      {
+        exchange: "NFO",
+        tradingsymbol: params.symbol,
+        transaction_type: params.transactionType,
+        quantity: params.quantity,
+        price: legs[0].price,
+        order_type: "LIMIT",
+        product: "NRML",
+      },
+      {
+        exchange: "NFO",
+        tradingsymbol: params.symbol,
+        transaction_type: params.transactionType,
+        quantity: params.quantity,
+        price: legs[1].price,
+        order_type: "LIMIT",
+        product: "NRML",
+      },
+    ];
+  }
+
+  const response = await fetch("https://api.kite.trade/gtt/triggers", {
+    method: "POST",
+    headers: {
+      "X-Kite-Version": "3",
+      "Authorization": `token ${apiKey}:${accessToken}`,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      type: type,
+      condition: JSON.stringify(condition),
+      orders: JSON.stringify(orders),
+    }).toString(),
+  });
+
+  const json = await response.json();
+  if (json.status !== "success") {
+    throw new Error(json.message || "Failed to place GTT trigger");
+  }
+  return json.data;
+}
