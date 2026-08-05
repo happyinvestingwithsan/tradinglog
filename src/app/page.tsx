@@ -11,7 +11,7 @@ import TradesTable from "@/components/TradesTable";
 import ExcelUploader from "@/components/ExcelUploader";
 import KiteConnector from "@/components/KiteConnector";
 import { fetchKiteDataAction } from "@/app/actions/kite";
-import { ChartLineUp, FileXls, PlugsConnected, Plugs, Warning, ShieldCheck } from "@phosphor-icons/react";
+import { ChartLineUp, FileXls, PlugsConnected, Plugs, Warning, ShieldCheck, SignOut } from "@phosphor-icons/react";
 
 export default function DashboardPage() {
   const [trades, setTrades] = useState<RawTrade[]>([]);
@@ -195,6 +195,14 @@ export default function DashboardPage() {
               </>
             )}
           </div>
+
+          <a
+            href="/api/auth/logout"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/5 hover:border-rose-900/30 bg-zinc-950 text-zinc-500 hover:text-rose-400 transition-all text-[10px] font-mono font-medium"
+          >
+            <SignOut className="w-3.5 h-3.5" />
+            <span>Sign Out</span>
+          </a>
         </div>
       </header>
 
