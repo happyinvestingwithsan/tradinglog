@@ -59,7 +59,7 @@ export default function ExcelUploader({ onDataLoaded }: ExcelUploaderProps) {
         for (let i = headerRowIndex + 1; i < rawRows.length; i++) {
           const row = rawRows[i];
           if (!Array.isArray(row) || row.length === 0 || !row[headers.indexOf("Symbol")]) {
-            continue; // Skip empty rows or separator lines
+            continue;
           }
           
           const getVal = (headerName: string) => {
@@ -67,7 +67,6 @@ export default function ExcelUploader({ onDataLoaded }: ExcelUploaderProps) {
             return idx !== -1 ? row[idx] : undefined;
           };
 
-          // Handle Zerodha Excel structure mapping
           const symbol = String(getVal("Symbol"));
           const tradeDate = String(getVal("Trade Date"));
           const tradeType = String(getVal("Trade Type")).toLowerCase();
@@ -76,7 +75,6 @@ export default function ExcelUploader({ onDataLoaded }: ExcelUploaderProps) {
           const tradeId = String(getVal("Trade ID") || "");
           const orderId = String(getVal("Order ID") || "");
           const executionTime = String(getVal("Order Execution Time") || getVal("Trade Date") || "");
-          // Unnamed: 14 is often Expiry Date in Zerodha F&O reports, let's look for column index 14 or labeled expiry
           let expiryDate = "";
           const expiryIdx = headers.findIndex(h => h.toLowerCase().includes("expiry") || h.toLowerCase() === "unnamed: 14");
           if (expiryIdx !== -1 && row[expiryIdx]) {
@@ -92,7 +90,7 @@ export default function ExcelUploader({ onDataLoaded }: ExcelUploaderProps) {
               price,
               tradeId,
               orderId,
-              executionTime: executionTime.replace(" ", "T"), // Format to parseable ISO
+              executionTime: executionTime.replace(" ", "T"),
               expiryDate
             });
           }
@@ -158,10 +156,10 @@ export default function ExcelUploader({ onDataLoaded }: ExcelUploaderProps) {
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={triggerFileInput}
-        className={`glass-panel border-dashed rounded-[2rem] p-10 text-center cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col items-center justify-center min-h-[220px] ${
+        className={`bg-white border-2 border-dashed rounded-3xl p-10 text-center cursor-pointer transition-all duration-300 flex flex-col items-center justify-center min-h-[220px] shadow-sm ${
           isDragging 
-            ? "border-emerald-500/50 bg-emerald-500/5 shadow-[0_0_40px_rgba(16,185,129,0.1)] scale-[1.01]" 
-            : "border-white/10 hover:border-white/20 hover:bg-white/[0.01]"
+            ? "border-emerald-500 bg-emerald-50/50 scale-[1.01]" 
+            : "border-slate-200 hover:border-emerald-400 hover:bg-slate-50/50"
         }`}
       >
         <input
@@ -174,17 +172,17 @@ export default function ExcelUploader({ onDataLoaded }: ExcelUploaderProps) {
 
         {isParsing ? (
           <div className="space-y-4">
-            <SpinnerGap className="w-10 h-10 text-emerald-400 animate-spin" weight="light" />
-            <p className="text-zinc-400 text-sm font-medium">Analyzing spreadsheet structures...</p>
+            <SpinnerGap className="w-10 h-10 text-emerald-600 animate-spin" weight="bold" />
+            <p className="text-slate-600 text-sm font-semibold font-mono">Analyzing tradebook structures...</p>
           </div>
         ) : (
           <div className="space-y-4 max-w-sm">
-            <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2 mx-auto">
-              <CloudArrowUp className="w-6 h-6 text-zinc-400" weight="light" />
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-2 mx-auto">
+              <CloudArrowUp className="w-6 h-6 text-emerald-600" weight="bold" />
             </div>
             <div>
-              <p className="text-white text-sm font-semibold">Import Zerodha Tradebook</p>
-              <p className="text-zinc-500 text-xs mt-1">
+              <p className="text-slate-900 text-sm font-bold font-mono">Import Zerodha Tradebook</p>
+              <p className="text-slate-500 text-xs mt-1 font-mono">
                 Drag and drop your `tradebook-XXXXXX-FO.xlsx` file here, or click to browse.
               </p>
             </div>
@@ -193,7 +191,7 @@ export default function ExcelUploader({ onDataLoaded }: ExcelUploaderProps) {
       </div>
 
       {error && (
-        <div className="mt-4 p-4 rounded-2xl bg-rose-950/20 border border-rose-900/30 text-rose-400 text-xs text-center font-medium">
+        <div className="mt-4 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs text-center font-medium font-mono">
           {error}
         </div>
       )}

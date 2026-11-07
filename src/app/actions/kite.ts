@@ -1,6 +1,6 @@
 "use server";
 
-import { exchangeKiteToken, fetchKiteTrades, fetchKitePositions, fetchKiteMargins, fetchKiteGttTriggers, createKiteGttTrigger } from '@/lib/kite';
+import { exchangeKiteToken, fetchKiteTrades, fetchKitePositions, fetchKiteMargins, fetchKiteGttTriggers, createKiteGttTrigger, KiteSession } from '@/lib/kite';
 import { RawTrade } from '@/lib/tradeEngine';
 
 export async function authenticateKiteAction(
@@ -14,6 +14,40 @@ export async function authenticateKiteAction(
   } catch (error: any) {
     console.error("Zerodha auth error:", error);
     return { success: false, error: error.message || 'Authentication failed' };
+  }
+}
+
+export async function validateAccessTokenAction(
+  apiKey: string,
+  accessToken: string
+) {
+  try {
+    const response = await fetch('https://api.kite.trade/user/profile', {
+      method: 'GET',
+      headers: {
+        'X-Kite-Version': '3',
+        'Authorization': `token ${apiKey}:${accessToken}`,
+      },
+    });
+
+    const json = await response.json();
+
+    if (json.status !== 'success') {
+      throw new Error(json.message || 'Invalid access token or session expired');
+    }
+
+    const session: KiteSession = {
+      accessToken,
+      publicToken: json.data.public_token || '',
+      userId: json.data.user_id,
+      userName: json.data.user_name,
+      apiKey,
+    };
+
+    return { success: true, session };
+  } catch (error: any) {
+    console.error("Zerodha token validation error:", error);
+    return { success: false, error: error.message || 'Failed to validate Access Token' };
   }
 }
 
@@ -31,11 +65,18 @@ export async function fetchKiteDataAction(apiKey: string, accessToken: string) {
     const margins = results[2].status === 'fulfilled' ? results[2].value : null;
     const gttTriggers = results[3].status === 'fulfilled' ? results[3].value : [];
 
-    // Log individual errors for visibility in server console
-    if (results[0].status === 'rejected') console.error("Trades fetch failed:", results[0].reason);
-    if (results[1].status === 'rejected') console.error("Positions fetch failed:", results[1].reason);
-    if (results[2].status === 'rejected') console.error("Margins fetch failed:", results[2].reason);
-    if (results[3].status === 'rejected') console.error("GTT Triggers fetch failed:", results[3].reason);
+    // Check if positions failed due to invalid token
+    if (results[1].status === 'rejected') {
+      const reason = results[1].reason?.message || '';
+      console.error("Positions fetch failed:", reason);
+      if (reason.toLowerCase().includes('token') || reason.toLowerCase().includes('session')) {
+        return { 
+          success: false, 
+          isTokenExpired: true,
+          error: 'Zerodha Kite session expired or token is invalid. Please reconnect today.' 
+        };
+      }
+    }
 
     return { 
       success: true, 

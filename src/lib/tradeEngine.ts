@@ -35,6 +35,10 @@ export interface OpenPosition {
   entryPrice: number;
   totalValue: number;
   lots: OpenPositionLot[];
+  lastPrice?: number;
+  pnl?: number;
+  m2m?: number;
+  isKiteLive?: boolean;
 }
 
 export interface TradeSummary {

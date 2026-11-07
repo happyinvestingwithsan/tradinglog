@@ -17,6 +17,17 @@ interface PerformanceChartProps {
 }
 
 export default function PerformanceChart({ trades }: PerformanceChartProps) {
+  if (trades.length === 0) {
+    return (
+      <div className="h-[280px] flex flex-col items-center justify-center text-center p-6 border border-dashed border-slate-200 rounded-2xl bg-slate-50/50">
+        <p className="text-xs font-semibold text-slate-600 font-mono">No closed trades recorded</p>
+        <p className="text-[11px] text-slate-400 font-mono mt-1 max-w-sm">
+          Equity curve will plot automatically when closed positions are synced from Kite or imported from Excel.
+        </p>
+      </div>
+    );
+  }
+
   // Compute cumulative P&L chronologically
   const sorted = [...trades].sort(
     (a, b) => new Date(a.sellDate).getTime() - new Date(b.sellDate).getTime()
@@ -46,33 +57,33 @@ export default function PerformanceChart({ trades }: PerformanceChartProps) {
 
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
-      const data = payload[0].payload;
-      if (data.index === 0) return null;
+      const pointData = payload[0].payload;
+      if (pointData.index === 0) return null;
       
-      const isProfit = data.tradePnl >= 0;
+      const isProfit = pointData.tradePnl >= 0;
 
       return (
-        <div className="glass-panel rounded-2xl p-4 border border-white/10 text-xs backdrop-blur-xl">
-          <p className="text-zinc-400 font-medium mb-1.5">{data.date}</p>
+        <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-xl text-xs font-mono">
+          <p className="text-slate-500 font-semibold mb-1.5">{pointData.date}</p>
           <div className="space-y-1">
             <div className="flex justify-between gap-6">
-              <span className="text-zinc-500">Asset:</span>
-              <span className="font-mono text-zinc-300 font-medium">{data.symbol}</span>
+              <span className="text-slate-500">Asset:</span>
+              <span className="font-bold text-slate-800">{pointData.symbol}</span>
             </div>
             <div className="flex justify-between gap-6">
-              <span className="text-zinc-500">Trade P&L:</span>
-              <span className={`font-mono font-semibold ${isProfit ? "text-emerald-400" : "text-rose-400"}`}>
+              <span className="text-slate-500">Trade P&L:</span>
+              <span className={`font-bold ${isProfit ? "text-emerald-600" : "text-rose-600"}`}>
                 {isProfit ? "+" : ""}
-                {data.tradePnl.toLocaleString("en-IN", {
+                {pointData.tradePnl.toLocaleString("en-IN", {
                   style: "currency",
                   currency: "INR",
                 })}
               </span>
             </div>
-            <div className="flex justify-between gap-6 border-t border-white/5 pt-1.5 mt-1.5">
-              <span className="text-zinc-500">Cumulative P&L:</span>
-              <span className="font-mono text-white font-semibold">
-                {data.pnl.toLocaleString("en-IN", {
+            <div className="flex justify-between gap-6 border-t border-slate-100 pt-1.5 mt-1.5">
+              <span className="text-slate-500">Cumulative P&L:</span>
+              <span className="font-bold text-slate-900">
+                {pointData.pnl.toLocaleString("en-IN", {
                   style: "currency",
                   currency: "INR",
                 })}
@@ -94,23 +105,23 @@ export default function PerformanceChart({ trades }: PerformanceChartProps) {
         >
           <defs>
             <linearGradient id="pnlGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#10b981" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+              <stop offset="5%" stopColor="#059669" stopOpacity={0.25} />
+              <stop offset="95%" stopColor="#059669" stopOpacity={0.02} />
             </linearGradient>
           </defs>
           
           <XAxis
             dataKey="date"
-            stroke="#52525b"
-            fontSize={10}
+            stroke="#94a3b8"
+            fontSize={11}
             tickLine={false}
             axisLine={false}
             dy={10}
           />
           
           <YAxis
-            stroke="#52525b"
-            fontSize={10}
+            stroke="#94a3b8"
+            fontSize={11}
             tickLine={false}
             axisLine={false}
             tickFormatter={(v) => {
@@ -122,18 +133,18 @@ export default function PerformanceChart({ trades }: PerformanceChartProps) {
             domain={[minPnl - padding, maxPnl + padding]}
           />
           
-          <Tooltip content={<CustomTooltip />} cursor={{ stroke: "rgba(255,255,255,0.08)", strokeWidth: 1 }} />
+          <Tooltip content={<CustomTooltip />} cursor={{ stroke: "#cbd5e1", strokeWidth: 1 }} />
           
-          <ReferenceLine y={0} stroke="rgba(255,255,255,0.1)" strokeDasharray="3 3" />
+          <ReferenceLine y={0} stroke="#cbd5e1" strokeDasharray="3 3" />
           
           <Area
             type="monotone"
             dataKey="pnl"
-            stroke="#10b981"
-            strokeWidth={1.5}
+            stroke="#059669"
+            strokeWidth={2}
             fillOpacity={1}
             fill="url(#pnlGradient)"
-            animationDuration={1500}
+            animationDuration={1200}
             animationEasing="ease-in-out"
           />
         </AreaChart>

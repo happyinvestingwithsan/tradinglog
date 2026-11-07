@@ -1,0 +1,807 @@
+{
+  "timestamp": 1793109717,
+  "duration": 17.36,
+  "total": 80,
+  "items": {
+    "BAJAJ-AUTO": {
+      "symbol": "BAJAJ-AUTO",
+      "price": 10390.0,
+      "high52": 12470.0,
+      "low52": 8605.0,
+      "prevClose": 10071.0,
+      "dropPct": 16.68,
+      "dayPct": 3.17,
+      "timestamp": 1793109710
+    },
+    "MARUTI": {
+      "symbol": "MARUTI",
+      "price": 11450.0,
+      "high52": 17370.0,
+      "low52": 10985.0,
+      "prevClose": 11220.0,
+      "dropPct": 34.08,
+      "dayPct": 2.05,
+      "timestamp": 1793109710
+    },
+    "AXISBANK": {
+      "symbol": "AXISBANK",
+      "price": 1205.7,
+      "high52": 1418.3,
+      "low52": 1150.3,
+      "prevClose": 1220.0,
+      "dropPct": 14.99,
+      "dayPct": -1.17,
+      "timestamp": 1793109710
+    },
+    "HDFCBANK": {
+      "symbol": "HDFCBANK",
+      "price": 680.2,
+      "high52": 1017.5,
+      "low52": 681.9,
+      "prevClose": 688.05,
+      "dropPct": 33.15,
+      "dayPct": -1.14,
+      "timestamp": 1793109710
+    },
+    "ICICIBANK": {
+      "symbol": "ICICIBANK",
+      "price": 1386.9,
+      "high52": 1480.0,
+      "low52": 1187.6,
+      "prevClose": 1403.0,
+      "dropPct": 6.29,
+      "dayPct": -1.15,
+      "timestamp": 1793109710
+    },
+    "KOTAKBANK": {
+      "symbol": "KOTAKBANK",
+      "price": 442.5,
+      "high52": 453.1,
+      "low52": 345.5,
+      "prevClose": 440.75,
+      "dropPct": 2.34,
+      "dayPct": 0.4,
+      "timestamp": 1793109710
+    },
+    "SBIN": {
+      "symbol": "SBIN",
+      "price": 945.1,
+      "high52": 1234.7,
+      "low52": 917.7,
+      "prevClose": 960.8,
+      "dropPct": 23.46,
+      "dayPct": -1.63,
+      "timestamp": 1793109710
+    },
+    "LT": {
+      "symbol": "LT",
+      "price": 3665.1,
+      "high52": 4440.0,
+      "low52": 3288.1,
+      "prevClose": 3680.0,
+      "dropPct": 17.45,
+      "dayPct": -0.4,
+      "timestamp": 1793109710
+    },
+    "RELIANCE": {
+      "symbol": "RELIANCE",
+      "price": 1196.2,
+      "high52": 1611.8,
+      "low52": 1152.2,
+      "prevClose": 1201.8,
+      "dropPct": 25.78,
+      "dayPct": -0.47,
+      "timestamp": 1793109710
+    },
+    "TITAN": {
+      "symbol": "TITAN",
+      "price": 4365.9,
+      "high52": 5186.7,
+      "low52": 3667.3,
+      "prevClose": 4323.0,
+      "dropPct": 15.83,
+      "dayPct": 0.99,
+      "timestamp": 1793109710
+    },
+    "HINDUNILVR": {
+      "symbol": "HINDUNILVR",
+      "price": 1818.0,
+      "high52": 2526.0,
+      "low52": 1781.1,
+      "prevClose": 1818.6,
+      "dropPct": 28.03,
+      "dayPct": -0.03,
+      "timestamp": 1793109710
+    },
+    "ITC": {
+      "symbol": "ITC",
+      "price": 260.0,
+      "high52": 426.4,
+      "low52": 253.15,
+      "prevClose": 260.5,
+      "dropPct": 39.02,
+      "dayPct": -0.19,
+      "timestamp": 1793109710
+    },
+    "NESTLEIND": {
+      "symbol": "NESTLEIND",
+      "price": 1180.5,
+      "high52": 1553.0,
+      "low52": 1156.2,
+      "prevClose": 1173.5,
+      "dropPct": 23.99,
+      "dayPct": 0.6,
+      "timestamp": 1793109710
+    },
+    "PIDILITIND": {
+      "symbol": "PIDILITIND",
+      "price": 1450.0,
+      "high52": 1707.5,
+      "low52": 1259.0,
+      "prevClose": 1478.0,
+      "dropPct": 15.08,
+      "dayPct": -1.89,
+      "timestamp": 1793109710
+    },
+    "HCLTECH": {
+      "symbol": "HCLTECH",
+      "price": 1420.0,
+      "high52": 1780.1,
+      "low52": 1030.0,
+      "prevClose": 1417.0,
+      "dropPct": 20.23,
+      "dayPct": 0.21,
+      "timestamp": 1793109710
+    },
+    "INFY": {
+      "symbol": "INFY",
+      "price": 1163.0,
+      "high52": 1728.0,
+      "low52": 980.4,
+      "prevClose": 1166.0,
+      "dropPct": 32.7,
+      "dayPct": -0.26,
+      "timestamp": 1793109710
+    },
+    "TCS": {
+      "symbol": "TCS",
+      "price": 2496.9,
+      "high52": 3350.0,
+      "low52": 1976.8,
+      "prevClose": 2535.0,
+      "dropPct": 25.47,
+      "dayPct": -1.5,
+      "timestamp": 1793109711
+    },
+    "BAJAJFINSV": {
+      "symbol": "BAJAJFINSV",
+      "price": 1677.0,
+      "high52": 2188.7,
+      "low52": 1597.0,
+      "prevClose": 1670.9,
+      "dropPct": 23.38,
+      "dayPct": 0.37,
+      "timestamp": 1793109712
+    },
+    "BAJAJHLDNG": {
+      "symbol": "BAJAJHLDNG",
+      "price": 10901.0,
+      "high52": 13250.0,
+      "low52": 8588.0,
+      "prevClose": 11050.0,
+      "dropPct": 17.73,
+      "dayPct": -1.35,
+      "timestamp": 1793109711
+    },
+    "BAJFINANCE": {
+      "symbol": "BAJFINANCE",
+      "price": 912.0,
+      "high52": 1176.4,
+      "low52": 787.9,
+      "prevClose": 918.7,
+      "dropPct": 22.48,
+      "dayPct": -0.73,
+      "timestamp": 1793109712
+    },
+    "HDFCAMC": {
+      "symbol": "HDFCAMC",
+      "price": 2267.7,
+      "high52": 2901.5,
+      "low52": 2205.6,
+      "prevClose": 2258.4,
+      "dropPct": 21.84,
+      "dayPct": 0.41,
+      "timestamp": 1793109712
+    },
+    "HDFCLIFE": {
+      "symbol": "HDFCLIFE",
+      "price": 513.6,
+      "high52": 788.5,
+      "low52": 508.7,
+      "prevClose": 519.0,
+      "dropPct": 34.86,
+      "dayPct": -1.04,
+      "timestamp": 1793109711
+    },
+    "ASIANPAINT": {
+      "symbol": "ASIANPAINT",
+      "price": 2277.0,
+      "high52": 2985.7,
+      "low52": 2115.0,
+      "prevClose": 2322.0,
+      "dropPct": 23.74,
+      "dayPct": -1.94,
+      "timestamp": 1793109712
+    },
+    "HAVELLS": {
+      "symbol": "HAVELLS",
+      "price": 1008.5,
+      "high52": 1516.6,
+      "low52": 1002.8,
+      "prevClose": 1009.9,
+      "dropPct": 33.5,
+      "dayPct": -0.14,
+      "timestamp": 1793109711
+    },
+    "PAGEIND": {
+      "symbol": "PAGEIND",
+      "price": 34610.0,
+      "high52": 43855.0,
+      "low52": 29805.0,
+      "prevClose": 33910.0,
+      "dropPct": 21.08,
+      "dayPct": 2.06,
+      "timestamp": 1793109712
+    },
+    "VOLTAS": {
+      "symbol": "VOLTAS",
+      "price": 946.2,
+      "high52": 1582.5,
+      "low52": 931.5,
+      "prevClose": 947.6,
+      "dropPct": 40.21,
+      "dayPct": -0.15,
+      "timestamp": 1793109712
+    },
+    "COLPAL": {
+      "symbol": "COLPAL",
+      "price": 1603.4,
+      "high52": 2301.6,
+      "low52": 1580.0,
+      "prevClose": 1615.5,
+      "dropPct": 30.34,
+      "dayPct": -0.75,
+      "timestamp": 1793109711
+    },
+    "DABUR": {
+      "symbol": "DABUR",
+      "price": 357.8,
+      "high52": 534.0,
+      "low52": 356.05,
+      "prevClose": 359.3,
+      "dropPct": 33.0,
+      "dayPct": -0.42,
+      "timestamp": 1793109712
+    },
+    "MARICO": {
+      "symbol": "MARICO",
+      "price": 776.15,
+      "high52": 889.1,
+      "low52": 705.8,
+      "prevClose": 775.15,
+      "dropPct": 12.7,
+      "dayPct": 0.13,
+      "timestamp": 1793109712
+    },
+    "PGHH": {
+      "symbol": "PGHH",
+      "price": 6765.0,
+      "high52": 13497.0,
+      "low52": 6579.0,
+      "prevClose": 6811.0,
+      "dropPct": 49.88,
+      "dayPct": -0.68,
+      "timestamp": 1793109712
+    },
+    "ICICIGI": {
+      "symbol": "ICICIGI",
+      "price": 1576.2,
+      "high52": 2064.9,
+      "low52": 1423.1,
+      "prevClose": 1580.0,
+      "dropPct": 23.67,
+      "dayPct": -0.24,
+      "timestamp": 1793109712
+    },
+    "NAM-INDIA": {
+      "symbol": "NAM-INDIA",
+      "price": 943.0,
+      "high52": 1269.5,
+      "low52": 795.8,
+      "prevClose": 919.1,
+      "dropPct": 25.72,
+      "dayPct": 2.6,
+      "timestamp": 1793109713
+    },
+    "ICICIPRULI": {
+      "symbol": "ICICIPRULI",
+      "price": 431.0,
+      "high52": 706.8,
+      "low52": 413.35,
+      "prevClose": 431.5,
+      "dropPct": 39.02,
+      "dayPct": -0.12,
+      "timestamp": 1793109713
+    },
+    "BERGEPAINT": {
+      "symbol": "BERGEPAINT",
+      "price": 463.4,
+      "high52": 594.55,
+      "low52": 391.1,
+      "prevClose": 465.8,
+      "dropPct": 22.06,
+      "dayPct": -0.52,
+      "timestamp": 1793109713
+    },
+    "ABBOTINDIA": {
+      "symbol": "ABBOTINDIA",
+      "price": 25515.0,
+      "high52": 30655.0,
+      "low52": 24650.0,
+      "prevClose": 25225.0,
+      "dropPct": 16.77,
+      "dayPct": 1.15,
+      "timestamp": 1793109713
+    },
+    "GLAXO": {
+      "symbol": "GLAXO",
+      "price": 2472.4,
+      "high52": 3120.7,
+      "low52": 2088.1,
+      "prevClose": 2445.9,
+      "dropPct": 20.77,
+      "dayPct": 1.08,
+      "timestamp": 1793109713
+    },
+    "BATAINDIA": {
+      "symbol": "BATAINDIA",
+      "price": 662.4,
+      "high52": 1136.3,
+      "low52": 599.6,
+      "prevClose": 626.9,
+      "dropPct": 41.71,
+      "dayPct": 5.66,
+      "timestamp": 1793109713
+    },
+    "GILLETTE": {
+      "symbol": "GILLETTE",
+      "price": 7318.0,
+      "high52": 9664.0,
+      "low52": 6860.0,
+      "prevClose": 7256.5,
+      "dropPct": 24.28,
+      "dayPct": 0.85,
+      "timestamp": 1793109713
+    },
+    "PFIZER": {
+      "symbol": "PFIZER",
+      "price": 3709.8,
+      "high52": 5346.0,
+      "low52": 3589.0,
+      "prevClose": 3687.2,
+      "dropPct": 30.61,
+      "dayPct": 0.61,
+      "timestamp": 1793109713
+    },
+    "SANOFI": {
+      "symbol": "SANOFI",
+      "price": 3075.0,
+      "high52": 4898.0,
+      "low52": 2758.2,
+      "prevClose": 2852.8,
+      "dropPct": 37.22,
+      "dayPct": 7.79,
+      "timestamp": 1793109714
+    },
+    "EICHERMOT": {
+      "symbol": "EICHERMOT",
+      "price": 7165.0,
+      "high52": 8230.0,
+      "low52": 6442.0,
+      "prevClose": 7099.5,
+      "dropPct": 12.94,
+      "dayPct": 0.92,
+      "timestamp": 1793109714
+    },
+    "HYUNDAI": {
+      "symbol": "HYUNDAI",
+      "price": 1861.3,
+      "high52": 2468.0,
+      "low52": 1658.0,
+      "prevClose": 1868.0,
+      "dropPct": 24.58,
+      "dayPct": -0.36,
+      "timestamp": 1793109714
+    },
+    "M&M": {
+      "symbol": "M&M",
+      "price": 2858.4,
+      "high52": 3839.9,
+      "low52": 2744.3,
+      "prevClose": 2853.1,
+      "dropPct": 25.56,
+      "dayPct": 0.19,
+      "timestamp": 1793109714
+    },
+    "VBL": {
+      "symbol": "VBL",
+      "price": 416.0,
+      "high52": 555.8,
+      "low52": 381.0,
+      "prevClose": 408.0,
+      "dropPct": 25.15,
+      "dayPct": 1.96,
+      "timestamp": 1793109713
+    },
+    "ULTRACEMCO": {
+      "symbol": "ULTRACEMCO",
+      "price": 11150.0,
+      "high52": 13110.0,
+      "low52": 10325.0,
+      "prevClose": 11180.0,
+      "dropPct": 14.95,
+      "dayPct": -0.27,
+      "timestamp": 1793109714
+    },
+    "DMART": {
+      "symbol": "DMART",
+      "price": 3200.0,
+      "high52": 4644.0,
+      "low52": 3102.3,
+      "prevClose": 3150.0,
+      "dropPct": 31.09,
+      "dayPct": 1.59,
+      "timestamp": 1793109714
+    },
+    "GODREJCP": {
+      "symbol": "GODREJCP",
+      "price": 828.8,
+      "high52": 1273.9,
+      "low52": 827.0,
+      "prevClose": 833.15,
+      "dropPct": 34.94,
+      "dayPct": -0.52,
+      "timestamp": 1793109714
+    },
+    "BSE": {
+      "symbol": "BSE",
+      "price": 3441.1,
+      "high52": 4446.8,
+      "low52": 2326.1,
+      "prevClose": 3359.0,
+      "dropPct": 22.62,
+      "dayPct": 2.44,
+      "timestamp": 1793109714
+    },
+    "JIOFIN": {
+      "symbol": "JIOFIN",
+      "price": 207.24,
+      "high52": 316.85,
+      "low52": 202.51,
+      "prevClose": 205.23,
+      "dropPct": 34.59,
+      "dayPct": 0.98,
+      "timestamp": 1793109714
+    },
+    "ADANIPORTS": {
+      "symbol": "ADANIPORTS",
+      "price": 1754.5,
+      "high52": 1891.1,
+      "low52": 1292.0,
+      "prevClose": 1752.5,
+      "dropPct": 7.22,
+      "dayPct": 0.11,
+      "timestamp": 1793109715
+    },
+    "CIPLA": {
+      "symbol": "CIPLA",
+      "price": 1350.0,
+      "high52": 1593.3,
+      "low52": 1165.7,
+      "prevClose": 1355.0,
+      "dropPct": 15.27,
+      "dayPct": -0.37,
+      "timestamp": 1793109715
+    },
+    "BOSCHLTD": {
+      "symbol": "BOSCHLTD",
+      "price": 45600.0,
+      "high52": 50000.0,
+      "low52": 28610.0,
+      "prevClose": 44900.0,
+      "dropPct": 8.8,
+      "dayPct": 1.56,
+      "timestamp": 1793109714
+    },
+    "MRF": {
+      "symbol": "MRF",
+      "price": 118030.0,
+      "high52": 162065.0,
+      "low52": 116700.0,
+      "prevClose": 117380.0,
+      "dropPct": 27.17,
+      "dayPct": 0.55,
+      "timestamp": 1793109715
+    },
+    "UNITDSPR": {
+      "symbol": "UNITDSPR",
+      "price": 1270.0,
+      "high52": 1563.4,
+      "low52": 1210.8,
+      "prevClose": 1239.0,
+      "dropPct": 18.77,
+      "dayPct": 2.5,
+      "timestamp": 1793109715
+    },
+    "RADICO": {
+      "symbol": "RADICO",
+      "price": 4290.0,
+      "high52": 4747.0,
+      "low52": 2500.0,
+      "prevClose": 4200.0,
+      "dropPct": 9.63,
+      "dayPct": 2.14,
+      "timestamp": 1793109715
+    },
+    "UBL": {
+      "symbol": "UBL",
+      "price": 1143.6,
+      "high52": 1844.0,
+      "low52": 1128.6,
+      "prevClose": 1131.1,
+      "dropPct": 37.98,
+      "dayPct": 1.11,
+      "timestamp": 1793109715
+    },
+    "BLUESTARCO": {
+      "symbol": "BLUESTARCO",
+      "price": 1526.0,
+      "high52": 2029.6,
+      "low52": 1432.3,
+      "prevClose": 1504.5,
+      "dropPct": 24.81,
+      "dayPct": 1.43,
+      "timestamp": 1793109715
+    },
+    "DIXON": {
+      "symbol": "DIXON",
+      "price": 11233.0,
+      "high52": 15775.0,
+      "low52": 9600.0,
+      "prevClose": 11161.0,
+      "dropPct": 28.79,
+      "dayPct": 0.65,
+      "timestamp": 1793109715
+    },
+    "BAJAJHFL": {
+      "symbol": "BAJAJHFL",
+      "price": 77.64,
+      "high52": 112.4,
+      "low52": 72.65,
+      "prevClose": 78.58,
+      "dropPct": 30.93,
+      "dayPct": -1.2,
+      "timestamp": 1793109715
+    },
+    "MCX": {
+      "symbol": "MCX",
+      "price": 3186.8,
+      "high52": 3481.4,
+      "low52": 1762.1,
+      "prevClose": 3111.8,
+      "dropPct": 8.46,
+      "dayPct": 2.41,
+      "timestamp": 1793109715
+    },
+    "APOLLOHOSP": {
+      "symbol": "APOLLOHOSP",
+      "price": 7791.5,
+      "high52": 9070.5,
+      "low52": 6696.5,
+      "prevClose": 7844.0,
+      "dropPct": 14.1,
+      "dayPct": -0.67,
+      "timestamp": 1793109715
+    },
+    "FORTIS": {
+      "symbol": "FORTIS",
+      "price": 736.5,
+      "high52": 1067.7,
+      "low52": 704.95,
+      "prevClose": 734.7,
+      "dropPct": 31.02,
+      "dayPct": 0.24,
+      "timestamp": 1793109715
+    },
+    "INDHOTEL": {
+      "symbol": "INDHOTEL",
+      "price": 812.85,
+      "high52": 795.65,
+      "low52": 565.0,
+      "prevClose": 795.5,
+      "dropPct": -2.16,
+      "dayPct": 2.18,
+      "timestamp": 1793109716
+    },
+    "ITCHOTELS": {
+      "symbol": "ITCHOTELS",
+      "price": 166.3,
+      "high52": 223.2,
+      "low52": 137.3,
+      "prevClose": 164.31,
+      "dropPct": 25.49,
+      "dayPct": 1.21,
+      "timestamp": 1793109716
+    },
+    "JSWINFRA": {
+      "symbol": "JSWINFRA",
+      "price": 317.25,
+      "high52": 375.5,
+      "low52": 233.42,
+      "prevClose": 317.45,
+      "dropPct": 15.51,
+      "dayPct": -0.06,
+      "timestamp": 1793109716
+    },
+    "ACC": {
+      "symbol": "ACC",
+      "price": 1147.5,
+      "high52": 1987.0,
+      "low52": 1123.0,
+      "prevClose": 1166.7,
+      "dropPct": 42.25,
+      "dayPct": -1.65,
+      "timestamp": 1793109716
+    },
+    "AWL": {
+      "symbol": "AWL",
+      "price": 176.35,
+      "high52": 282.9,
+      "low52": 171.03,
+      "prevClose": 172.5,
+      "dropPct": 37.66,
+      "dayPct": 2.23,
+      "timestamp": 1793109717
+    },
+    "HONAUT": {
+      "symbol": "HONAUT",
+      "price": 31520.0,
+      "high52": 41495.0,
+      "low52": 26220.0,
+      "prevClose": 31250.0,
+      "dropPct": 24.04,
+      "dayPct": 0.86,
+      "timestamp": 1793109717
+    },
+    "KAJARIACER": {
+      "symbol": "KAJARIACER",
+      "price": 1144.2,
+      "high52": 1275.0,
+      "low52": 869.6,
+      "prevClose": 1118.4,
+      "dropPct": 10.26,
+      "dayPct": 2.31,
+      "timestamp": 1793109717
+    },
+    "RELAXO": {
+      "symbol": "RELAXO",
+      "price": 277.05,
+      "high52": 454.7,
+      "low52": 236.5,
+      "prevClose": 280.1,
+      "dropPct": 39.07,
+      "dayPct": -1.09,
+      "timestamp": 1793109717
+    },
+    "CDSL": {
+      "symbol": "CDSL",
+      "price": 1222.0,
+      "high52": 1673.7,
+      "low52": 1116.3,
+      "prevClose": 1196.0,
+      "dropPct": 26.99,
+      "dayPct": 2.17,
+      "timestamp": 1793109717
+    },
+    "ANGELONE": {
+      "symbol": "ANGELONE",
+      "price": 289.2,
+      "high52": 360.45,
+      "low52": 208.63,
+      "prevClose": 282.6,
+      "dropPct": 19.77,
+      "dayPct": 2.34,
+      "timestamp": 1793109717
+    },
+    "CAMS": {
+      "symbol": "CAMS",
+      "price": 677.4,
+      "high52": 844.9,
+      "low52": 611.4,
+      "prevClose": 661.5,
+      "dropPct": 19.82,
+      "dayPct": 2.4,
+      "timestamp": 1793109717
+    },
+    "MEDANTA": {
+      "symbol": "MEDANTA",
+      "price": 1260.6,
+      "high52": 1544.0,
+      "low52": 956.0,
+      "prevClose": 1212.0,
+      "dropPct": 18.35,
+      "dayPct": 4.01,
+      "timestamp": 1793109717
+    },
+    "QUESS": {
+      "symbol": "QUESS",
+      "price": 323.35,
+      "high52": 388.75,
+      "low52": 166.3,
+      "prevClose": 321.0,
+      "dropPct": 16.82,
+      "dayPct": 0.73,
+      "timestamp": 1793109717
+    },
+    "TEAMLEASE": {
+      "symbol": "TEAMLEASE",
+      "price": 1051.8,
+      "high52": 1872.2,
+      "low52": 1040.0,
+      "prevClose": 1054.7,
+      "dropPct": 43.82,
+      "dayPct": -0.27,
+      "timestamp": 1793109717
+    },
+    "ASTRAZEN": {
+      "symbol": "ASTRAZEN",
+      "price": 6073.0,
+      "high52": 9849.5,
+      "low52": 5640.0,
+      "prevClose": 6051.5,
+      "dropPct": 38.34,
+      "dayPct": 0.36,
+      "timestamp": 1793109717
+    },
+    "ERIS": {
+      "symbol": "ERIS",
+      "price": 1198.4,
+      "high52": 1740.0,
+      "low52": 1069.0,
+      "prevClose": 1105.2,
+      "dropPct": 31.13,
+      "dayPct": 8.43,
+      "timestamp": 1793109717
+    },
+    "LALPATHLAB": {
+      "symbol": "LALPATHLAB",
+      "price": 1901.8,
+      "high52": 2038.6,
+      "low52": 1272.6,
+      "prevClose": 1855.6,
+      "dropPct": 6.71,
+      "dayPct": 2.49,
+      "timestamp": 1793109717
+    },
+    "TMPV": {
+      "symbol": "TMPV",
+      "price": 261.2,
+      "high52": 419.0,
+      "low52": 259.35,
+      "prevClose": 263.7,
+      "dropPct": 37.66,
+      "dayPct": -0.95,
+      "timestamp": 1793109717
+    }
+  }
+}
